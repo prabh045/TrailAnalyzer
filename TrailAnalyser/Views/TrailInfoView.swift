@@ -49,4 +49,5 @@ struct TrailInfoView: View {
 #Preview {
     @Previewable @State var trailInfo = TrailInfo.empty
     TrailInfoView(trailInfo: $trailInfo)
+        .trailTheme()
 }
