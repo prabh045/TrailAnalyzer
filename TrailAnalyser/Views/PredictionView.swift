@@ -8,12 +8,8 @@
 import SwiftUI
 
 struct PredictionView: View {
-    @State private var predictedRisk: Risk
-    
-    init(predictedRisk: Risk) {
-        self.predictedRisk = predictedRisk
-    }
-    
+    @Binding var predictedRisk: Risk
+        
     var body: some View {
         VStack {
             RiskCard(risk: predictedRisk)
@@ -46,6 +42,6 @@ struct PredictionView: View {
 
 #Preview {
     NavigationStack {
-        PredictionView(predictedRisk: .moderate)
+        PredictionView(predictedRisk: Binding.constant(.moderate))
     }
 }

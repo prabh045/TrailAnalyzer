@@ -26,7 +26,7 @@ struct ContentView: View {
                 NavigationLink {
                     let analyser = TrailAnalyzer()
                     let risk = analyser.predictRisk(trailInfo: trailInfo)
-                    RiskCard(risk: risk)
+                    PredictionView(predictedRisk: Binding.constant(risk))
                 } label: {
                     Text("Submit")
                         .font(.headline)
@@ -41,8 +41,10 @@ struct ContentView: View {
 
             }
             .navigationTitle("Trail Analyzer")
+            .scrollDismissesKeyboard(.interactively)
             .trailTheme()
         }
+        .tint(Color.trailTheme)
         .onAppear {
             trailInfo = .sample
         }
