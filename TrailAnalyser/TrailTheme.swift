@@ -30,6 +30,12 @@ extension View {
     }
 }
 
+extension Color {
+    static var trailTheme: Color {
+        Color(red: 0.92, green: 0.32, blue: 0.25)
+    }
+}
+
 #Preview {
     Text("Hello, World!")
         .trailTheme()
