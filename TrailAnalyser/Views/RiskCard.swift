@@ -32,6 +32,6 @@ struct RiskCard: View {
 }
 
 #Preview {
-    let prediction = TrailAnalyzer().predictRisk()
+    let prediction = TrailAnalyzer().predictRisk(trailInfo: .sample)
     RiskCard(risk: prediction)
 }
